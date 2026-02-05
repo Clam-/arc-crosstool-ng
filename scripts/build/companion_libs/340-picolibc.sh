@@ -94,8 +94,10 @@ cpu_family = '${target_arch}'
 cpu = '${target_arch}'
 endian = 'little'
 
-[properties]
+[built-in options]
 c_args = [ ${meson_cflags} '-nostdlib', '-fno-common', '-ftls-model=local-exec' ]
+
+[properties]
 needs_exe_wrapper = true
 skip_sanity_check = true
 default_flash_addr = '${CT_LIBC_PICOLIBC_DEFAULT_FLASH_ADDR}'
