@@ -566,7 +566,7 @@ if [ -z "${CT_RESTART}" ]; then
             #   archive members; hence, avoid common symbols. Alternative is to
             #   have ranlib wrapper in buildtools/bin supply -c option.
             CT_CFLAGS_FOR_BUILD+=" -fno-common"
-            CT_LDFLAGS_FOR_BUILD+=" -framework CoreFoundation"
+            CT_LDFLAGS_FOR_BUILD+=" -Wl,-framework,CoreFoundation"
             ;;
     esac
 
@@ -590,7 +590,7 @@ if [ -z "${CT_RESTART}" ]; then
         *darwin*)
             # Same as above, for host
             CT_CFLAGS_FOR_HOST+=" -fno-common"
-            CT_LDFLAGS_FOR_HOST+=" -framework CoreFoundation"
+            CT_LDFLAGS_FOR_HOST+=" -Wl,-framework,CoreFoundation"
             ;;
     esac
     CT_DoLog DEBUG "CFLAGS for host compiler: '${CT_CFLAGS_FOR_HOST}'"
